@@ -59,7 +59,7 @@ exports.getRecords = async (req,resp, next) => {
                     }
                 },
                 {$sort: {createdAt: 1}},
-                {$limit: parseInt(1000)}
+                {$limit: parseInt(100)}
             ]
         );
 
