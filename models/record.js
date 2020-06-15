@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 /**
  * @description Record object value schema declare!
- *
  */
 let record = new Schema(
     {

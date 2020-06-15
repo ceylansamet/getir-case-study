@@ -42,10 +42,6 @@ router.get('/', cors(), (req, res) => {
  * @returns {Array.<Body>} Point - Response Object Array
  */
 
-router.post('/getirApp',cors(),
-    controller.validate("checkParams"),
-    controller.getRecords);
-
-
+router.post('/getirApp',cors(), controller.validate("checkParams"), controller.getRecords);
 
 module.exports = router;

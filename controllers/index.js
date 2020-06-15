@@ -4,7 +4,6 @@ const {getirErrorHandle} = require("../utils/getirErrorHandle");
 var recordModel = require('../models/record');
 
 
-
 /**
  * @function records
  * @description {post} /getirApi action method of getRecords
