@@ -6,7 +6,9 @@ var bodyParser = require('body-parser')
 var logger = require('morgan');
 const {handleError} = require('./utils/getirErrorHandle');
 var cors = require('cors');
+var swagger = require("./utils/swaggerDocs");
 const route = require('./routes/index');
+
 
 
 var indexRouter = require('./routes/index');
@@ -19,33 +21,18 @@ const expressSwagger = require('express-swagger-generator')(app);
 app.use(cors());
 app.options('*', cors());
 
-let options = {
-    swaggerDefinition: {
-        info: {
-            description: 'Records App Documention',
-            title: 'Abdussamet CEYLAN ',
-            version: '1.0.0',
-        },
-        host: process.env.APP_URL,
-        basePath: '/',
-        produces: [
-            "application/x-www-form-urlencoded"
-        ]
-    },
-    basedir: __dirname,
-    files: ['./routes/*.js']
-};
+/**
+ * Swagger Initialize
+ */
 
-expressSwagger(options);
+expressSwagger(swagger.getSwaggerConfig());
 
 
 app.use(logger('dev'));
 app.use(express.json());
-//app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(bodyParser.urlencoded())
-//app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 

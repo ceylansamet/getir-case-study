@@ -7,14 +7,9 @@ var app = require('../app');
 var debug = require('debug')('getirapp:server');
 var http = require('http');
 var db = require('../utils/db');
-var swagger = require('../utils/swaggerDocs');
 
 
 db.initDatabase();
-
-//swagger.initSwagger();
-
-
 
 
 /**
@@ -46,7 +41,6 @@ function normalizePort(val) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
-    // named pipe
     return val;
   }
 

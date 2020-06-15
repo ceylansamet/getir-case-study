@@ -1,11 +1,7 @@
-const expressSwagger = require('express-swagger-generator');
-
-
-
-function initSwagger() {
+exports.getSwaggerConfig = function getSwaggerConfig(){
 
     try{
-        let options = {
+        return {
             swaggerDefinition: {
                 info: {
                     description: 'Records App Documention',
@@ -22,7 +18,6 @@ function initSwagger() {
             files: ['./routes/*.js']
         };
 
-        expressSwagger(options)
     }
     catch(e){
         console.error("Swagger initalize error!");
@@ -31,7 +26,3 @@ function initSwagger() {
 
 }
 
-
-module.exports = {
-    initSwagger: initSwagger
-};
