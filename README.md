@@ -10,13 +10,13 @@ $ npm install
 ```
 ### Dependencies
 
-  - [Express]
-  - [dotenv]
-  - [chai]
-  - [async]
-  - [express-validator]
-  - [mongoose]
-  - [express-swagger-generator]
+  - Express
+  - dotenv
+  - chai
+  - async
+  - express-validator
+  - mongoose
+  - express-swagger-generator
 
 ### Unit Test
 
