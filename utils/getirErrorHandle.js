@@ -1,7 +1,7 @@
 const {error} = require('./getirResponse');
 const getirResponse = require("./getirResponse");
 
-class getirErrorHandle extends Error {
+exports.getirErrorHandle =  class getirErrorHandle extends Error {
     constructor(statusCode, message) {
         super();
         this.statusCode = statusCode;
@@ -9,13 +9,14 @@ class getirErrorHandle extends Error {
     }
 }
 
-const handleError = (err, res) => {
+exports.handleError = (err, res) => {
     console.log("handle");
     const { statusCode, message } = err;
     getirResponse.error(res,"",statusCode,message)
 };
 
-module.exports = {
+/*module.exports = {
     getirErrorHandle,
     handleError
 };
+*/

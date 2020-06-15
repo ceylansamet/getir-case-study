@@ -20,7 +20,7 @@ exports.getRecords = async (req,resp, next) => {
 
     if(!errors.isEmpty())
     {
-        return getirResponse.error(resp,"",200,"Check Parameters!");
+        return getirResponse.error(resp,"",400,"Check Parameters!");
     }
 
     let {startDate, endDate, minCount, maxCount} = req.body;
@@ -65,7 +65,7 @@ exports.getRecords = async (req,resp, next) => {
         return getirResponse.success(resp,record,200,"Success");
 
     } catch (e) {
-       throw new getirErrorHandle(500, e.message)
+       throw new getirErrorHandle(400, e.message)
     }
 }
 

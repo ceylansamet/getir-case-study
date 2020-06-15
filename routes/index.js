@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var cors = require('cors');
-var controller = require("../controllers");
+var controller = require("../services");
 
-router.get('/', cors(), (req, res) => {
+router.get('/', (req, res) => {
     res.redirect('/api-docs')
 });
 
@@ -42,6 +41,6 @@ router.get('/', cors(), (req, res) => {
  * @returns {Array.<Body>} Point - Response Object Array
  */
 
-router.post('/getirApp',cors(), controller.validate("checkParams"), controller.getRecords);
+router.post('/getirApp',controller.validate("checkParams"), controller.getRecords);
 
 module.exports = router;
