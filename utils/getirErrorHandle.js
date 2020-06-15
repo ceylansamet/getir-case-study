@@ -15,8 +15,3 @@ exports.handleError = (err, res) => {
     getirResponse.error(res,"",statusCode,message)
 };
 
-/*module.exports = {
-    getirErrorHandle,
-    handleError
-};
-*/
